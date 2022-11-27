@@ -19,4 +19,15 @@ func _physics_process(delta):
 	print(velocity.y)
 
 	velocity.y += GRAVITY
-	velocity = move_and_slide(velocity)
+	velocity = move_and_slide(velocity,Vector2.UP)
+	update_anim()
+
+
+
+
+
+func update_anim():
+	if is_on_floor():
+		$RunAndJumpAnimation.play("Run")
+	else:
+		$RunAndJumpAnimation.play("Jump")
