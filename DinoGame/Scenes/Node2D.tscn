@@ -1,0 +1,26 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Scenes/Bird.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Assets/ground.png" type="Texture" id=3]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 511.5, 7 )
+
+[node name="Main" type="Node2D"]
+
+[node name="Bird" parent="." instance=ExtResource( 1 )]
+position = Vector2( 280, 171 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+show_behind_parent = true
+position = Vector2( 510, 242 )
+
+[node name="Sprite" type="Sprite" parent="StaticBody2D"]
+show_behind_parent = true
+position = Vector2( 2, 58 )
+scale = Vector2( 0.533, 0.556 )
+texture = ExtResource( 3 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2( 1.5, 352 )
+shape = SubResource( 1 )
