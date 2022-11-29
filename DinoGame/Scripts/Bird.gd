@@ -15,7 +15,8 @@ func _ready():
 
 func _physics_process(delta):
 	if Input.is_action_just_pressed("jump"):
-		velocity.y -= JUMPSPEED
+		if is_on_floor():
+			velocity.y -= JUMPSPEED
 	print(velocity.y)
 
 	velocity.y += GRAVITY
