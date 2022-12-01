@@ -4,7 +4,6 @@ extends Node2D
 export (PackedScene) var clouds
 
 
-
 func _ready():
 	randomize()
 	
@@ -13,7 +12,7 @@ func _on_CloudTimer_timeout():
 	
 	var cloud = clouds.instance()
 	var cloud_pos_x = 1200
-	var cloud_pos_y = randi() % 321 + 10
+	var cloud_pos_y = randi() % 350 + 10
 	var cloud_scale = rand_range(3,4)
 	var cloud_flip_h = randi() % 2 == 0 ## True or False
 	var cloud_speed = rand_range(1.5,2)  
