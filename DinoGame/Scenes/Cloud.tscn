@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Assets/bulut.png" type="Texture" id=1]
+[ext_resource path="res://Scripts/Cloud.gd" type="Script" id=2]
+
+[node name="Cloud" type="Sprite"]
+texture = ExtResource( 1 )
+hframes = 7
+script = ExtResource( 2 )
+
+[node name="VisibilityNotifier2D" type="VisibilityNotifier2D" parent="."]
+visible = false
+position = Vector2( -1.5, -0.500001 )
+scale = Vector2( 1.45, 1.55 )
+
+[connection signal="screen_exited" from="VisibilityNotifier2D" to="." method="_on_VisibilityNotifier2D_screen_exited"]

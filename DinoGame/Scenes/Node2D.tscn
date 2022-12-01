@@ -1,23 +1,16 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://Scenes/Bird.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scripts/ParallaxBackground.gd" type="Script" id=2]
 [ext_resource path="res://Assets/ground.png" type="Texture" id=3]
 [ext_resource path="res://Assets/background.png" type="Texture" id=4]
-[ext_resource path="res://Scenes/Area2D.tscn" type="PackedScene" id=5]
-[ext_resource path="res://Scripts/Node2D.gd" type="Script" id=6]
+[ext_resource path="res://Scripts/CloudSpawner.gd" type="Script" id=5]
+[ext_resource path="res://Scenes/Cloud.tscn" type="PackedScene" id=6]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 511.5, 7 )
 
-[sub_resource type="Curve2D" id=2]
-_data = {
-"points": PoolVector2Array( 0, 0, 0, 0, -1, 0, 0, 0, 0, 0, 1020, -2, 0, 0, 0, 0, 1021, 329 )
-}
-
 [node name="Main" type="Node2D"]
-script = ExtResource( 6 )
-cloud_scene = ExtResource( 5 )
 
 [node name="Bird" parent="." instance=ExtResource( 1 )]
 position = Vector2( 113, 556 )
@@ -51,14 +44,12 @@ position = Vector2( 511.5, 300.5 )
 scale = Vector2( 0.532813, 0.55463 )
 texture = ExtResource( 3 )
 
-[node name="CloudPath" type="Path2D" parent="."]
-position = Vector2( 2, 3 )
-curve = SubResource( 2 )
+[node name="CloudSpawner" type="Node2D" parent="."]
+script = ExtResource( 5 )
+clouds = ExtResource( 6 )
 
-[node name="CloudSpawn" type="PathFollow2D" parent="CloudPath"]
-rotation = -0.00195886
-
-[node name="CloudTimer\?" type="Timer" parent="."]
+[node name="CloudTimer" type="Timer" parent="CloudSpawner"]
+wait_time = 2.0
 autostart = true
 
-[connection signal="timeout" from="CloudTimer?" to="." method="_on_CloudTimer_timeout"]
+[connection signal="timeout" from="CloudSpawner/CloudTimer" to="CloudSpawner" method="_on_CloudTimer_timeout"]
