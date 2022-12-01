@@ -25,10 +25,9 @@ scale = Vector2( 1.5, 1.5 )
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 show_behind_parent = true
-position = Vector2( 510, 242 )
+position = Vector2( 510, 586 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2( 1.5, 352 )
 shape = SubResource( 1 )
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
