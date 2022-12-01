@@ -52,4 +52,7 @@ clouds = ExtResource( 6 )
 wait_time = 2.0
 autostart = true
 
+[node name="Camera2D" type="Camera2D" parent="."]
+offset = Vector2( 512, 300 )
+
 [connection signal="timeout" from="CloudSpawner/CloudTimer" to="CloudSpawner" method="_on_CloudTimer_timeout"]
