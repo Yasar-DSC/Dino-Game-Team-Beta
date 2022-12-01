@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Assets/cactus.png" type="Texture" id=1]
+
+[sub_resource type="CapsuleShape2D" id=1]
+radius = 5.0
+height = 6.0
+
+[node name="CactusMid" type="Area2D"]
+
+[node name="Cactus" type="Sprite" parent="."]
+texture = ExtResource( 1 )
+hframes = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( 0, -6 )
+shape = SubResource( 1 )
