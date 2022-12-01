@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/çalı.png-1ba48bc54200d4dbc2551b31b63778bf.stex"
+path="res://.import/Bahtsız Bedevi.png-45bcbd4c4e5050b53a1c492a014c1258.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/çalı.png"
-dest_files=[ "res://.import/çalı.png-1ba48bc54200d4dbc2551b31b63778bf.stex" ]
+source_file="res://Assets/Bahtsız Bedevi.png"
+dest_files=[ "res://.import/Bahtsız Bedevi.png-45bcbd4c4e5050b53a1c492a014c1258.stex" ]
 
 [params]
 
@@ -20,7 +20,7 @@ compress/hdr_mode=0
 compress/bptc_ldr=0
 compress/normal_map=0
 flags/repeat=0
-flags/filter=false
+flags/filter=true
 flags/mipmaps=false
 flags/anisotropic=false
 flags/srgb=2
