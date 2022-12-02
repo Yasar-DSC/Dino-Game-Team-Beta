@@ -19,9 +19,9 @@ extents = Vector2( 511.5, 7 )
 
 [sub_resource type="ShaderMaterial" id=2]
 shader = ExtResource( 8 )
-shader_param/first_color = Color( 0, 0.25098, 0.647059, 1 )
-shader_param/second_color = Color( 0.968627, 0.635294, 0, 1 )
-shader_param/position = -0.01
+shader_param/first_color = Color( 0.0313726, 0.188235, 0.439216, 0.909804 )
+shader_param/second_color = Color( 0.968627, 0.635294, 0, 0.258824 )
+shader_param/position = 0.02
 shader_param/size = 1.118
 shader_param/angle = 256.634
 
@@ -79,6 +79,11 @@ region_rect = Rect2( 71, 44, 116, 117 )
 
 [node name="Color" type="CanvasLayer" parent="."]
 layer = -128
+
+[node name="ColorRect2" type="ColorRect" parent="Color"]
+margin_right = 1030.0
+margin_bottom = 592.0
+color = Color( 0.478431, 0.564706, 0.662745, 1 )
 
 [node name="ColorRect" type="ColorRect" parent="Color"]
 material = SubResource( 2 )
