@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=2]
+[gd_scene load_steps=25 format=2]
 
 [ext_resource path="res://Scenes/Bird.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scripts/ParallaxBackground.gd" type="Script" id=2]
@@ -14,6 +14,9 @@
 [ext_resource path="res://Scenes/CactusMid.tscn" type="PackedScene" id=12]
 [ext_resource path="res://Scenes/Bush.tscn" type="PackedScene" id=13]
 [ext_resource path="res://spotlight_1.png" type="Texture" id=14]
+[ext_resource path="res://Scripts/Button.gd" type="Script" id=15]
+[ext_resource path="res://Minecraftia-Regular.ttf" type="DynamicFontData" id=16]
+[ext_resource path="res://Scripts/Score.gd" type="Script" id=17]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 511.5, 7 )
@@ -43,6 +46,12 @@ glow_hdr_scale = 1.73
 glow_high_quality = true
 adjustment_enabled = true
 adjustment_color_correction = SubResource( 4 )
+
+[sub_resource type="DynamicFont" id=7]
+font_data = ExtResource( 16 )
+
+[sub_resource type="DynamicFont" id=6]
+font_data = ExtResource( 16 )
 
 [node name="Main" type="Node2D"]
 
@@ -126,11 +135,35 @@ Bush = ExtResource( 13 )
 
 [node name="ObstacleTimer" type="Timer" parent="ObstacleSpawner"]
 pause_mode = 2
-wait_time = 1.896
+wait_time = 1.5
 autostart = true
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource( 5 )
 
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Button" type="Button" parent="CanvasLayer"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 512.0
+margin_top = 300.0
+margin_right = -452.0
+margin_bottom = -240.0
+rect_pivot_offset = Vector2( 30, 31 )
+custom_fonts/font = SubResource( 7 )
+text = "Play"
+script = ExtResource( 15 )
+
+[node name="Score" type="Label" parent="."]
+margin_left = 923.0
+margin_right = 1024.0
+margin_bottom = 18.0
+grow_horizontal = 0
+custom_fonts/font = SubResource( 6 )
+text = "Score"
+script = ExtResource( 17 )
+
 [connection signal="timeout" from="CloudSpawner/CloudTimer" to="CloudSpawner" method="_on_CloudTimer_timeout"]
 [connection signal="timeout" from="ObstacleSpawner/ObstacleTimer" to="ObstacleSpawner" method="_on_ObstacleTimer_timeout"]
+[connection signal="pressed" from="CanvasLayer/Button" to="CanvasLayer/Button" method="_on_Button_pressed"]

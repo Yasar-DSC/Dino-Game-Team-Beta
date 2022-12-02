@@ -16,16 +16,16 @@ func _ready():
 func _physics_process(delta):
 	if Input.is_action_just_pressed("jump"):
 		if is_on_floor():
-			velocity.y -= JUMPSPEED * GlobalScript.engine_speed
+			velocity.y -= JUMPSPEED
 	
 
-	velocity.y += GRAVITY * GlobalScript.engine_speed
+	velocity.y += GRAVITY
 	velocity = move_and_slide(velocity,Vector2.UP)
 	update_anim()
 
 
 func update_anim():
-	if is_on_floor():
+	if is_on_floor() && (!GlobalScript.engine_speed ==0):
 		$RunAndJumpAnimation.play("Run")
 	else:
 		$RunAndJumpAnimation.play("Jump")

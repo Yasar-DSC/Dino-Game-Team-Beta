@@ -21,5 +21,5 @@ func _on_VisibilityNotifier2D_screen_exited():
 
 func detect_body(body):
 	if body.is_in_group("player"):
-		print("x")
+		GlobalScript.engine_speed = 0 
 

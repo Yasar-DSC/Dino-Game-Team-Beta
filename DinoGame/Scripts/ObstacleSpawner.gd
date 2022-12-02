@@ -26,8 +26,7 @@ func _on_ObstacleTimer_timeout():
 	
 	print("spawned")
 	add_child(cactus_instance)
-	pass
-#	add_child(cloud)
+
 	
 
 
