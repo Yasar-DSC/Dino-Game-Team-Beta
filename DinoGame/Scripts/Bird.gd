@@ -14,9 +14,11 @@ func _ready():
 
 
 func _physics_process(delta):
-	if Input.is_action_just_pressed("jump"):
+	if Input.is_action_just_pressed("jump") &&!GlobalScript.engine_speed ==0:
 		if is_on_floor():
 			velocity.y -= JUMPSPEED
+			$AudioStreamPlayer2D.play()
+			
 	
 
 	velocity.y += GRAVITY
@@ -29,3 +31,6 @@ func update_anim():
 		$RunAndJumpAnimation.play("Run")
 	else:
 		$RunAndJumpAnimation.play("Jump")
+
+
+
