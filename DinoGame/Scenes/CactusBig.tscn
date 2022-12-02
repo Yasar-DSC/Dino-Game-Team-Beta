@@ -7,7 +7,11 @@
 extents = Vector2( 20.5, 14.5 )
 
 [node name="CactusBig" type="Area2D"]
+scale = Vector2( 1.3, 1.3 )
 script = ExtResource( 2 )
+__meta__ = {
+"_editor_description_": ""
+}
 
 [node name="Engel" type="Sprite" parent="."]
 position = Vector2( 0, 1 )
