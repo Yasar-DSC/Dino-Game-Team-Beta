@@ -99,6 +99,7 @@ CactusBig = ExtResource( 10 )
 Bush = ExtResource( 13 )
 
 [node name="ObstacleTimer" type="Timer" parent="ObstacleSpawner"]
+pause_mode = 2
 wait_time = 1.896
 autostart = true
 

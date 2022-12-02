@@ -1,7 +1,7 @@
 extends Area2D
 
 
-var speed = 2 #same as ground speed
+var speed = 200 #same as ground speed
 
 
 # Called when the node enters the scene tree for the first time.
@@ -11,7 +11,7 @@ func _ready():
 
 func _physics_process(delta):
 	
-	position.x -= speed
+	position.x -= speed * delta
 	position.y = 570
 	
 

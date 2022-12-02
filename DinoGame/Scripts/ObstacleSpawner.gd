@@ -11,6 +11,7 @@ export (PackedScene) var Bush
 func _ready():
 	randomize()
 	
+	
 
 func _on_ObstacleTimer_timeout():
 	
