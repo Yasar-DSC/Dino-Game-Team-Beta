@@ -6,8 +6,8 @@ var velocity = Vector2(0,0)
 #Bir de StaticBody2D yi de silebilirsin o sadece zemin olması için var
 
 
-const JUMPSPEED = 200
-const GRAVITY = 5
+export var JUMPSPEED = 200
+export var GRAVITY = 5
 
 func _ready():
 	pass 
@@ -16,15 +16,12 @@ func _ready():
 func _physics_process(delta):
 	if Input.is_action_just_pressed("jump"):
 		if is_on_floor():
-			velocity.y -= JUMPSPEED
+			velocity.y -= JUMPSPEED * GlobalScript.engine_speed
 	
 
-	velocity.y += GRAVITY
+	velocity.y += GRAVITY * GlobalScript.engine_speed
 	velocity = move_and_slide(velocity,Vector2.UP)
 	update_anim()
-
-
-
 
 
 func update_anim():

@@ -12,6 +12,6 @@ func _ready():
 
 
 func _process(delta):
-	$Floor.motion_offset += Vector2.LEFT * floor_speed * delta
-	$Mountain.motion_offset += Vector2.LEFT * mountain_speed * delta
+	$Floor.motion_offset += Vector2.LEFT * floor_speed * delta * GlobalScript.engine_speed
+	$Mountain.motion_offset += Vector2.LEFT * mountain_speed * delta * GlobalScript.engine_speed
 	#$Clouds.motion_offset += Vector2.LEFT * cloud_speed * rand_range(0.8, 2) * delta

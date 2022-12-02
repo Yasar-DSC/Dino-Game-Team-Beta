@@ -1,19 +1,24 @@
 extends Area2D
 
 
-var speed = 200 #same as ground speed
+var speed = 300 #same as ground speed
 
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass # Replace with function body.
+	connect("body_entered",self,"detect_body")
 
 
 func _physics_process(delta):
 	
-	position.x -= speed * delta
+	position.x -= speed * delta * GlobalScript.engine_speed
 	
 
 
 func _on_VisibilityNotifier2D_screen_exited():
 	queue_free()
+
+
+func detect_body(body):
+	if body.is_in_group("player"):
+		print("x")
